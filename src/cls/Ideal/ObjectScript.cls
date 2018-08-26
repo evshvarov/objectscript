@@ -15,7 +15,6 @@ ClassMethod SystemInfo() As %String
 
 ClassMethod WriteToDevice()
 {
-    write ..HelloWorld(),!
     write "The version of the class: "_..#Version,!
     write "The version of the system: "_..SystemInfo()
 }
