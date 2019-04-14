@@ -19,8 +19,8 @@ ClassMethod WriteToDevice()
     write "The version of the system: "_..SystemInfo()
 }
 
-/// This method multiplies all the values for all the keys entries by 2
-/// Method expects the coming array in a form
+/// This method loops through an array and multiplies all the values of keys  by 2
+/// Method accepts list variable which has the name of an array
 /// list("a")=1
 /// list("b")=2
 /// ...
@@ -28,9 +28,9 @@ ClassMethod WriteToDevice()
 /// list is an $Name of array 
 ClassMethod ArraySample(list) As %Status
 {
-    set key=$Order(@list@(""))
+    set key=$Order(@list@("")) //get initial key
     while key'="" {
-        set @list@(key)=@list@(key)*2
+        set @list@(key)=@list@(key)*2 // multiply all the keys in a list
         set key=$Order(@list@(key))
     }
 }
