@@ -1,5 +1,5 @@
 # ideal_objectscript
-Ideal simplest objectscript app template for code guidelines and deployment.
+InterSystems objectscript app template with object script samples for code guidelines and deployment.
 
 # Installation
 
