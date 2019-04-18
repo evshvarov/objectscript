@@ -3,10 +3,10 @@ InterSystems objectscript app template with object script samples for code guide
 
 # Installation
 
-Checkout the repo. 
+Checkout the repo into a folder (e.g. git clone)
 Make sure you have Docker installed.
 
-build container:
+build the container:
 
 $ docker-compose build 
 
@@ -16,7 +16,17 @@ $ docker-compose up -d
 
 it creates OSCRIPT Namespace and Database and loads the code into IRIS container
 
-# How it works
+
+# How to Develop
+
+Install [VSCode](https://code.visualstudio.com/) with [VSCode-ObjectScript](https://openexchange.intersystems.com/package/VSCode-ObjectScript) plugin
+Checout this repo into a folder
+Open the folder in VSCode
+Make sure you have IRIS docker container running (check the Installation section above).
+Because of the settings in .vscode folder VSCode will connect to container and Namespace properly.
+Develop.
+
+# How it Works
 
 # Hello World
 
