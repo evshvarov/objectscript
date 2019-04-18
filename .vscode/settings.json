@@ -1,0 +1,5 @@
+{
+    "objectscript.conn.version": 3,
+    "objectscript.conn.ns": "OSCRIPT",
+    "objectscript.conn.port": 52773
+}
