@@ -5,6 +5,7 @@ Parameter Version = 1.0;
 
 ClassMethod HelloWorld() As %String
 {
+    write "Hello World!!!"
     return "Hello World"
 }
 
