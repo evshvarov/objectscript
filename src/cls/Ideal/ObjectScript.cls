@@ -10,6 +10,7 @@ ClassMethod HelloWorld() As %String
 
 ClassMethod SystemInfo() As %String
 {
+    write $zd(3)
     return $zv
 }
 
