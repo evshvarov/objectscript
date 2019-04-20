@@ -5,7 +5,7 @@ Parameter Version = 1.0;
 
 ClassMethod HelloWorld() As %String
 {
-    return "Hello World and Martians!"
+    return "Hello World"
 }
 
 ClassMethod SystemInfo() As %String
