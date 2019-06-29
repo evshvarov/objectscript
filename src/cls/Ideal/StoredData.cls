@@ -1,4 +1,4 @@
-Class Ideal.StoredData Extends (%Persistent, %Populate)
+Class Ideal.StoredData Extends %Persistent
 {
 
 Property StringData As %String;
@@ -7,10 +7,24 @@ ClassMethod AddRecords(records As %Integer = 10) As %Status
 {
     set counter=0
     while counter < records {
-        set obj=..%New()
-        do obj.%Save()
         set counter=$I(counter)
+        set obj=..%New()
+        set obj.StringData="Value"_counter
+        do obj.%Save()
     }
+}
+
+ClassMethod DisplayAllRecords() As %Status
+{
+    set query = ##class(%SQL.Statement).%New()
+    set status= query.%PrepareClassQuery("Ideal.StoredData","Extent")
+    set rset=query.%Execute()
+
+    while (rset.%Next()) {
+    
+    set obj=..%OpenId(rset.%Get("ID"))
+    write "%ID=",rset.%Get("ID"),", StringData=",obj.StringData,!
+ }
 }
 
 ClassMethod DeleteAllRecords() As %Status
