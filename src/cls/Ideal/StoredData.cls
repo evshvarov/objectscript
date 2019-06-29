@@ -32,10 +32,19 @@ ClassMethod DeleteAllRecords() As %Status
     do ..%KillExtent()
 }
 
+/// slow but universal method 
+/// it could be slow cause %OpenId opens all the properties of instance in memory
 ClassMethod GetPropertyForID(stId As %Integer) As %String
 {
     set obj=..%OpenId(stId)
     return obj.StringData
+}
+
+/// Fast method, because gets data from Global
+/// Doesn't work for calculated and transient properties
+ClassMethod GetStoredPropertyForID(stId As %Integer) As %String
+{
+        return ##class(Ideal.StoredData).StringDataGetStored(stId)
 }
 
 ClassMethod GetColumnForID(stId As %Integer) As %String
