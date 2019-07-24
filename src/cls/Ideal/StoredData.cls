@@ -3,13 +3,15 @@ Class Ideal.StoredData Extends %Persistent
 
 Property StringData As %String;
 
+Property StringSQLComputed As %String [ Calculated, SqlComputeCode = {set {*} = "DoubledValue="_($Piece({StringData},"=",2)*2)}, SqlComputed ];
+
 ClassMethod AddRecords(records As %Integer = 10) As %Status
 {
     set counter=0
     while counter < records {
         set counter=$I(counter)
         set obj=..%New()
-        set obj.StringData="Value"_counter
+        set obj.StringData="Value="_counter
         do obj.%Save()
     }
 }
@@ -23,7 +25,7 @@ ClassMethod DisplayAllRecords() As %Status
     while (rset.%Next()) {
     
     set obj=..%OpenId(rset.%Get("ID"))
-    write "%ID=",rset.%Get("ID"),", StringData=",obj.StringData,!
+    write "%ID=",obj.%Id(),", StringData=",obj.StringData," StringSQLComputed=",obj.StringSQLComputed,!
  }
 }
 
@@ -61,6 +63,9 @@ Storage Default
 </Value>
 <Value name="2">
 <Value>StringData</Value>
+</Value>
+<Value name="3">
+<Value>StringSQLComputed</Value>
 </Value>
 </Data>
 <DataLocation>^Ideal.StoredDataD</DataLocation>
