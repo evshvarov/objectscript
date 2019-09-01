@@ -1,4 +1,4 @@
-Class Ideal.StoredData Extends %Persistent
+Class Example.StoredData Extends %Persistent
 {
 
 Property StringData As %String;
@@ -19,7 +19,7 @@ ClassMethod AddRecords(records As %Integer = 10) As %Status
 ClassMethod DisplayAllRecords() As %Status
 {
     set query = ##class(%SQL.Statement).%New()
-    set status= query.%PrepareClassQuery("Ideal.StoredData","Extent")
+    set status= query.%PrepareClassQuery("Example.StoredData","Extent")
     set rset=query.%Execute()
 
     while (rset.%Next()) {
@@ -46,12 +46,12 @@ ClassMethod GetPropertyForID(stId As %Integer) As %String
 /// Doesn't work for calculated and transient properties
 ClassMethod GetStoredPropertyForID(stId As %Integer) As %String
 {
-        return ##class(Ideal.StoredData).StringDataGetStored(stId)
+        return ##class(Example.StoredData).StringDataGetStored(stId)
 }
 
 ClassMethod GetColumnForID(stId As %Integer) As %String
 {
-    &sql(select StringData into :sd from Ideal.StoredData where id = :stId)
+    &sql(select StringData into :sd from Example.StoredData where id = :stId)
     return sd
 }
 
@@ -64,15 +64,12 @@ Storage Default
 <Value name="2">
 <Value>StringData</Value>
 </Value>
-<Value name="3">
-<Value>StringSQLComputed</Value>
-</Value>
 </Data>
-<DataLocation>^Ideal.StoredDataD</DataLocation>
+<DataLocation>^Example.StoredDataD</DataLocation>
 <DefaultData>StoredDataDefaultData</DefaultData>
-<IdLocation>^Ideal.StoredDataD</IdLocation>
-<IndexLocation>^Ideal.StoredDataI</IndexLocation>
-<StreamLocation>^Ideal.StoredDataS</StreamLocation>
+<IdLocation>^Example.StoredDataD</IdLocation>
+<IndexLocation>^Example.StoredDataI</IndexLocation>
+<StreamLocation>^Example.StoredDataS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
 
