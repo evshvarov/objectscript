@@ -1,6 +1,6 @@
 {
     "objectscript.conn.version": 3,
-    "objectscript.conn.ns": "OSCRIPT",
+    "objectscript.conn.ns": "USER",
     "objectscript.conn.port": 52773,
     "objectscript.conn.active": true
 }

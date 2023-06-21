@@ -14,8 +14,6 @@ run container:
 
 $ docker-compose up -d
 
-it creates OSCRIPT Namespace and Database and loads the code into IRIS container
-
 
 # How to Develop
 
@@ -32,21 +30,20 @@ Develop.
 
 start IRIS terminal and call the sample method:
 $ docker-compose exec iris iris session iris
-USER>zn "OSCRIPT"
-
-OSCRIPT>w ##class(Ideal.ObjectScript).HelloWorld()
+```
+USER>w ##class(Example.ObjectScript).HelloWorld()
 Hello World!
-
+```
 # Writing to the device and using class paremeters
 This method write system info and class version to the device. Open terminal and call WriteToDevice() method:
-
-OSCRIPT>d ##class(Ideal.ObjectScript).WriteToDevice()
+```
+USER>d ##class(Ideal.ObjectScript).WriteToDevice()
 The version of the class: 1.0
 The version of the system: Cache for UNIX (Apple Mac OS X for x86-64)
-
+```
 # Array Sample
-
-OSCRIPT> do ##class(Ideal.ObjectScript).ArraySampleTest()
+```
+USER>do ##class(Example.Globals).ArraySampleTest()
 Initial array:
 ^A(1)=1
 ^A(2)=2
@@ -70,5 +67,5 @@ After multiplication:
 ^A(8)=16
 ^A(9)=18
 ^A(10)=20
-
+```
   

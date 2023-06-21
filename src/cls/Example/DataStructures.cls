@@ -1,4 +1,4 @@
-ClassMethod Example.DataStructures() As %Status
+Class Example.DataStructures
 {
 
 ClassMethod GetMonthList() As %List
@@ -42,5 +42,5 @@ ClassMethod MonthGlobalUsage()
         set monthId=$Order(@ad@(monthId))
     }
 }
-    
+
 }
