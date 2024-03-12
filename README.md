@@ -37,7 +37,7 @@ Hello World!
 # Writing to the device and using class paremeters
 This method write system info and class version to the device. Open terminal and call WriteToDevice() method:
 ```
-USER>d ##class(Ideal.ObjectScript).WriteToDevice()
+USER>d ##class(Example.ObjectScript).WriteToDevice()
 The version of the class: 1.0
 The version of the system: Cache for UNIX (Apple Mac OS X for x86-64)
 ```
